@@ -4,7 +4,10 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<div class="flex flex-row items-center gap-x-1">
+			<img src="https://avatars.githubusercontent.com/u/44096988?v=4" class="w-6 h-6 rounded-full"/>
+			<h2><a href="/">{SITE_TITLE}</a></h2>
+		</div>
 		<div class="social-links">
 			<a href="https://github.com/Tangjj1996" target="_blank">
 				<span class="sr-only">Go to Astro's GitHub repo</span>
@@ -52,10 +55,5 @@ import { SITE_TITLE } from '../consts';
 	.social-links,
 	.social-links a {
 		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
 	}
 </style>
