@@ -19,6 +19,15 @@ jobs:
         run: npm install
       - name: Run build task
         run: npm run build --if-present
+
+      - name: Prepare SSH
+        run: >
+          cd ~ && mkdir .ssh &&
+          touch ~/.ssh/known_hosts &&
+          ssh-keyscan -H "$HOST" >>~/.ssh/known_hosts
+        env:
+          IP: ${{ secrets.HOST }}
+
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         with:
