@@ -13,8 +13,14 @@ type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { Content } = await post.render();
+const posts = await getCollection("blog");
+
+const curIndex = posts.findIndex(({ id }) => post.id === id);
+const prevPost = curIndex < 1 ? null : posts[curIndex - 1];
+const nextPost =
+  curIndex === posts.length - 1 || curIndex === -1 ? null : posts[curIndex + 1];
 ---
 
-<BlogPost {...post.data}>
+<BlogPost {...post.data} prevPost={prevPost} nextPost={nextPost}>
   <Content />
 </BlogPost>

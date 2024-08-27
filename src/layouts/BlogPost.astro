@@ -4,9 +4,20 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import { formatDate, formDateTime } from "../libs/utils";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & {
+  prevPost: CollectionEntry<"blog"> | null;
+  nextPost: CollectionEntry<"blog"> | null;
+};
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  prevPost,
+  nextPost,
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -89,5 +100,26 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         </div>
       </article>
     </main>
+    <footer
+      style={{ width: "calc(100% - 2em)", padding: "3em 6em" }}
+      class="flex justify-between items-center"
+    >
+      {
+        prevPost ? (
+          <a href={`/blog/${prevPost.slug}`} class="">
+            {prevPost.data.title}
+          </a>
+        ) : (
+          <div />
+        )
+      }
+      {
+        nextPost ? (
+          <a href={`/blog/${nextPost.slug}`}>{nextPost.data.title}</a>
+        ) : (
+          <div />
+        )
+      }
+    </footer>
   </body>
 </html>
