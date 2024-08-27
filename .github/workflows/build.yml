@@ -10,7 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: executing remote ssh commands using password
+      - name: Setup node env
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
