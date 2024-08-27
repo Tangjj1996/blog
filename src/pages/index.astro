@@ -20,12 +20,12 @@ const posts = (await getCollection('blog')).sort(
 		<Header />
 		<main>
 			<section>
-				<ul class='flex flex-col gap-y-4'>
+				<ul class='flex flex-col gap-y-6'>
 					{
 						posts.map((post) => (
 							<li>
 								<a href={`/blog/${post.slug}/`}>
-									<h3 class="text-yellow-600">{post.data.title}</div>
+									<h3 class="text-blue-500">{post.data.title}</div>
 									<div class="text-black text-sm">
 										<FormattedDate date={post.data.pubDate} />
 									</div>
