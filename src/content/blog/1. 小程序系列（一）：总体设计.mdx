@@ -4,6 +4,11 @@ description: “择趣转盘”是一款为广大用户提供方便、快捷的�
 pubDate: "2024-8-27 01:00:00"
 ---
 
+## 前言
+本教程会从0 到 1 逐步完成一整套完整的小程序开发并成功上线，旨在成为全网最丰富、最优雅的小程序制作最佳实践，涵盖前后端技术、运维&部署、云服务平台管理等。
+本教程也会积极融合社区优雅实践方案，及时更新相关内容中。我们将以“折趣转盘”为例，毫无保留展示产品从开发到上线的全生命周期，确保只要按照教程内容即可打造属于自己的小程序应用，
+完全不必担心内容步骤过时、示例代码运行报错、环境配置困难、技术栈过时等问题。
+
 ## 项目介绍
 
 “择趣转盘”是一款为广大用户提供方便、快捷的大转盘功能，它主要解决三大场景：
@@ -17,7 +22,7 @@ pubDate: "2024-8-27 01:00:00"
 线上 v0 版本抢先体验
 ![](/小程序/小程序码.png)
 
-## 架构设计
+## 架构设计&技术选型
 
 ![整体架构图](/小程序/架构图.png)
 
@@ -27,7 +32,7 @@ pubDate: "2024-8-27 01:00:00"
 - 状态管理：[Zustand](https://github.com/pmndrs/zustand) ，以功能强大、心智负担小著称的状态管理库，对比 Redux 库显著减少样板代码，它的创始人是前端大神 [dai-shi](https://github.com/dai-shi) ，作者还开发了其他状态管理库（[jotai](https://github.com/pmndrs/jotai)、[valtio](https://github.com/pmndrs/valtio)、[react-tracked](https://github.com/dai-shi/react-tracked)） [Github 45.8k 🌟](https://github.com/pmndrs/zustand)
 - 数据请求：[ReactQuery](https://tanstack.com/query/latest/docs/framework/react/overview)，用于在 React 应用中管理数据获取、缓存和同步的强大库，可轻松实现高效的数据请求和状态管理 [Github 41.5k 🌟](https://github.com/tanstack/query)
 - 样式方案：[Tailwindcss](https://tailwindcss.com/)，原子化样式方案，通过提供大量的 utility classes，让你可以快速构建响应式、可定制的用户界面，极大地提高了前端开发效率 [Gitbug 81.5k 🌟](https://github.com/tailwindlabs/tailwindcss)
-- CI/CD：Github Action，以 github 作为代码管理平台，集成 action 自动化上传/预览小程序
+- CI/CD：Github Action，以 Github 作为代码管理平台，集成 Action 自动化上传/预览小程序
 
 ### 后端
 
@@ -37,5 +42,6 @@ pubDate: "2024-8-27 01:00:00"
 - 发布部署: [pm2](https://pm2.keymetrics.io/) 一个守护进程管理器，管理并保持你的应用程序在线 [Gitub 41.4k 🌟](https://github.com/Unitech/pm2)
 
 ### 运维&部署
-- nginx
+- 阿里云
+- Nginx
 - Gitbub Action
