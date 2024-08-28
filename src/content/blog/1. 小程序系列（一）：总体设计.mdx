@@ -1,11 +1,36 @@
 ---
 title: 小程序系列（一）：总体设计
-description: 小程序系列（一）：总体设计
+description: “择趣转盘”是一款为广大用户提供方便、快捷的大转盘功能，它主要解决三大场景：1. 今天不知道吃什么，想要随机点一份套餐2. 今天不知道做什么运动...
 pubDate: "2024-8-27 01:00:00"
 ---
 
 ## 项目介绍
 
+“择趣转盘”是一款为广大用户提供方便、快捷的大转盘功能，它主要解决三大场景：
+
+1. 今天不知道吃什么，想要随机点一份套餐
+2. 今天不知道做什么运动，想要随机做一下运动
+3. 组局吃饭，想要在群聊里随机抽取一位“幸运观众”买单
+
+我们精心提供丰富且好用的大转盘工具，让用户在轻松便捷的操作中即可完成各种选择，还支持复杂场景的自定义配置，真正做到小而美，完美契合微信小程序 “用完即走” 的平台理念。
+
 ## 架构设计
 
 ![整体架构图](/小程序/架构图.png)
+
+### 前端
+
+- 框架：[Tarojs](https://docs.taro.zone/docs/)，一款支持 React 语法打包到各个平台的小程序跨端框架，Github 35.3k 🌟
+- 状态管理：[Zustand](https://github.com/pmndrs/zustand) ，以功能强大、心智负担小著称的状态管理库，对比 Redux 库显著减少样板代码，它的创始人是前端大神 [dai-shi](https://github.com/dai-shi) ，作者还开发了其他状态管理库（[jotai](https://github.com/pmndrs/jotai)、[valtio](https://github.com/pmndrs/valtio)、[react-tracked](https://github.com/dai-shi/react-tracked)） Github 45.8k 🌟
+- 数据请求：[ReactQuery](https://tanstack.com/query/latest/docs/framework/react/overview)，Github 41.5k 🌟
+- 样式方案：[Tailwindcss](https://tailwindcss.com/)，原子化样式方案，Gitbug 81.5k 🌟
+- CI/CD：Github Action，以 github 作为代码管理平台，集成 action 自动化上传/预览小程序
+
+### 后端
+
+- 框架：[Nestjs]
+- ORM：[Typeorm]
+- 数据库：[Mysql]
+- 发布部署: [pm2]
+
+### 运维&部署
